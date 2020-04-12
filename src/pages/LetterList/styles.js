@@ -36,8 +36,37 @@ export default StyleSheet.create({
   },
 
   main: {
-    flex: 1,
     // backgroundColor: 'red',
+    flex: 1,
+    marginTop: 30,
+  },
+
+  psalm: {
+    // backgroundColor: 'blue',
+    alignItems: 'center',
+  },
+
+  title: {
+    // backgroundColor: 'green',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#5a5a5a',
+    marginBottom: 5,
+  },
+
+  paragraph: {
+    // backgroundColor: 'red',
+    textAlign: 'center',
+    color: '#5a5a5a',
+    fontWeight: '100',
+  },
+
+  line: {
+    borderBottomColor: '#000',
+    borderBottomWidth: 1,
+    marginVertical: 30,
+    width: '70%',
+    color: '#5a5a5a',
   },
 
   footerShadow: {
