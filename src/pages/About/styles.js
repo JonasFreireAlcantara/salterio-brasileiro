@@ -21,53 +21,39 @@ export default StyleSheet.create({
     width: 250,
   },
 
-  search: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 20,
-  },
-
-  input: {
-    borderColor: '#5a5a5a',
-    borderWidth: 1,
-    flex: 1,
-    height: 40,
-    borderRadius: 5,
-    paddingLeft: 5,
-  },
-
-  button: {
-    backgroundColor: '#5a5a5a',
-    width: 40,
-    height: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 5,
-    marginLeft: 20,
-  },
-
   main: {
     flex: 1,
     // backgroundColor: 'red',
   },
 
-  footerShadow: {
-    elevation: 3,
-    marginHorizontal: -24,
+  subtitle: {
+    // backgroundColor: 'blue',
+    color: '#5a5a5a',
+    fontWeight: 'bold',
+    fontSize: 20,
+    marginVertical: 30,
+  },
 
-    shadowColor: '#000',
-    shadowRadius: 4,
-    shadowOffset: {
-      width: 0,
-      height: -3,
-    },
-    shadowOpacity: 0.25,
+  about: {
+    color: '#5a5a5a',
+    fontSize: 15,
+    marginBottom: 20,
+    textAlign: 'justify',
   },
 
   footer: {
+    backgroundColor: 'blue',
+    // margin: 20,
+    // marginHorizontal: -24,
     height: 70,
-    marginTop: 10,
+    // shadowColor: '#000',
+    // shadowRadius: 4,
+    // shadowOffset: {
+    //   width: 0,
+    //   height: -1,
+    // },
+    // shadowOpacity: 0.25,
+    elevation: 10,
 
     flexDirection: 'row',
     justifyContent: 'space-between',

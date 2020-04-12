@@ -1,7 +1,7 @@
 import React from 'react';
 
-import LetterList from './src/pages/LetterList';
+import Routes from './src/routes';
 
 export default function App() {
-  return <LetterList />;
+  return <Routes />;
 }
