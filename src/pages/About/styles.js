@@ -9,18 +9,6 @@ export default StyleSheet.create({
     paddingHorizontal: 24,
   },
 
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-
-  title: {
-    fontSize: 25,
-    textAlign: 'center',
-    width: 250,
-  },
-
   main: {
     flex: 1,
     // backgroundColor: 'red',

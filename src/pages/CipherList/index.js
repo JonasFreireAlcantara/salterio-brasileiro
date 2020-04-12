@@ -1,19 +1,19 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { View, TextInput, TouchableOpacity } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 import styles from './styles';
 
-const LetterList = () => {
+const CipherList = () => {
   return (
     <View style={styles.container}>
       <Header />
 
       <View style={styles.search}>
-        <TextInput style={styles.input} placeholder='Buscar Letra' />
+        <TextInput style={styles.input} placeholder='Buscar Cifra' />
         <TouchableOpacity style={styles.button}>
           <MaterialIcons name='search' size={28} color='#fff' />
         </TouchableOpacity>
@@ -26,4 +26,4 @@ const LetterList = () => {
   );
 };
 
-export default LetterList;
+export default CipherList;
