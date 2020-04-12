@@ -22,6 +22,7 @@ const LetterList = () => {
       <FlatList
         style={styles.main}
         data={[1, 2, 3, 4, 5]}
+        showsVerticalScrollIndicator={false}
         keyExtractor={(item) => String(item)}
         renderItem={(item) => (
           <TouchableOpacity style={styles.psalm}>

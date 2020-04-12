@@ -38,6 +38,40 @@ export default StyleSheet.create({
   main: {
     flex: 1,
     // backgroundColor: 'red',
+    marginTop: 30,
+  },
+
+  psalm: {
+    alignItems: 'center',
+  },
+
+  title: {
+    // backgroundColor: 'green',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#5a5a5a',
+    marginBottom: 10,
+  },
+
+  cipher: {
+    fontWeight: 'bold',
+    color: '#5a5a5a',
+    // backgroundColor: 'green',
+    width: '100%',
+  },
+
+  text: {
+    color: '#5a5a5a',
+    // backgroundColor: 'red',
+    width: '100%',
+  },
+
+  line: {
+    borderBottomColor: '#000',
+    borderBottomWidth: 1,
+    marginVertical: 30,
+    width: '70%',
+    color: '#5a5a5a',
   },
 
   footerShadow: {
