@@ -12,6 +12,7 @@ export default StyleSheet.create({
   main: {
     flex: 1,
     // backgroundColor: 'red',
+    marginTop: 30,
   },
 
   title: {
@@ -20,12 +21,26 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20,
     marginVertical: 30,
+    textAlign: 'center',
   },
 
-  about: {
+  stanza: {
+    // backgroundColor: 'red',
     color: '#5a5a5a',
-    fontSize: 15,
+    fontSize: 11,
     marginBottom: 20,
-    textAlign: 'justify',
+  },
+
+  cipher: {
+    // backgroundColor: 'green',
+    fontWeight: 'bold',
+    color: '#5a5a5a',
+    width: '100%',
+  },
+
+  text: {
+    // backgroundColor: 'red',
+    color: '#5a5a5a',
+    width: '100%',
   },
 });

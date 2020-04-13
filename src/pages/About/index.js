@@ -12,7 +12,7 @@ const About = () => {
       <Header />
 
       <View style={styles.main}>
-        <Text style={styles.subtitle}>O que é o Saltério ?</Text>
+        <Text style={styles.title}>O que é o Saltério ?</Text>
 
         <Text style={styles.about}>
           A CBS é uma comissão formada por membros reformados e confessionais da Igreja de Cristo.
