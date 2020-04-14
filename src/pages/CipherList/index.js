@@ -8,11 +8,13 @@ import Footer from '../../components/Footer';
 
 import styles from './styles';
 
+import psalms from '../../data/psalms';
+
 const CipherList = () => {
   const navigation = useNavigation();
 
-  function handleCipherClick() {
-    navigation.navigate('Cipher');
+  function navigateToCipher(psalm) {
+    navigation.navigate('Cipher', { psalm });
   }
 
   return (
@@ -28,26 +30,27 @@ const CipherList = () => {
 
       <FlatList
         style={styles.main}
-        data={[1, 2, 3, 4, 5]}
+        data={psalms}
         showsVerticalScrollIndicator={false}
-        keyExtractor={(item) => String(item)}
-        renderItem={(item) => (
-          <TouchableOpacity onPress={handleCipherClick} style={styles.psalm}>
-            <Text style={styles.title}>Salmo 1b</Text>
+        keyExtractor={(psalm) => String(psalm.titulo)}
+        renderItem={({ item: salmo }) => {
+          const [primeiraEstrofe] = salmo.estrofes;
 
-            <Text style={styles.cipher}>
-              {'   F                        C7   Dm      C   F         Edim   F       C'}
-            </Text>
-            <Text style={styles.text}>Quão bem aventurado é o homem que não anda</Text>
+          return (
+            <TouchableOpacity onPress={() => navigateToCipher(salmo)} style={styles.psalm}>
+              <Text style={styles.title}>{salmo.titulo}</Text>
 
-            <Text style={styles.cipher}>
-              {'C7                        Bb   F                   Gm          F    C7    F'}
-            </Text>
-            <Text style={styles.text}>Conforme as ímpias sugestões de conselheiros maus.</Text>
+              {primeiraEstrofe.map((verso, index) => (
+                <View key={index} style={styles.cipherTextContainer}>
+                  <Text style={styles.cipher}>{verso.cifra}</Text>
+                  <Text style={styles.text}>{verso.texto}</Text>
+                </View>
+              ))}
 
-            <View style={styles.line} />
-          </TouchableOpacity>
-        )}
+              <View style={styles.line} />
+            </TouchableOpacity>
+          );
+        }}
       />
 
       <Footer />

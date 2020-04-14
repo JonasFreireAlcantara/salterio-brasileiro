@@ -8,11 +8,13 @@ import Footer from '../../components/Footer';
 
 import styles from './styles';
 
+import psalms from '../../data/psalms';
+
 const LetterList = () => {
   const navigation = useNavigation();
 
-  function handleLetterClick() {
-    navigation.navigate('Letter');
+  function navigateToLetter(psalm) {
+    navigation.navigate('Letter', { psalm });
   }
 
   return (
@@ -28,23 +30,26 @@ const LetterList = () => {
 
       <FlatList
         style={styles.main}
-        data={[1, 2, 3, 4, 5]}
+        data={psalms}
         showsVerticalScrollIndicator={false}
-        keyExtractor={(item) => String(item)}
-        renderItem={(item) => (
-          <TouchableOpacity onPress={handleLetterClick} style={styles.psalm}>
-            <Text style={styles.title}>Salmo 1b</Text>
-            <Text style={styles.paragraph}>
-              1. Quão bem aventurado é o homem que não anda Conforme as ímpias sugestões de
-              conselheiros maus.
-            </Text>
-            <Text style={styles.paragraph}>
-              1. Quão bem aventurado é o homem que não anda Conforme as ímpias sugestões de
-              conselheiros maus.
-            </Text>
-            <View style={styles.line} />
-          </TouchableOpacity>
-        )}
+        keyExtractor={(psalm) => String(psalm.titulo)}
+        renderItem={({ item: salmo }) => {
+          const [primeiraEstrofe] = salmo.estrofes;
+
+          return (
+            <TouchableOpacity onPress={() => navigateToLetter(salmo)} style={styles.psalm}>
+              <Text style={styles.title}>{salmo.titulo}</Text>
+
+              {primeiraEstrofe.map((verse, index) => (
+                <Text key={index} style={styles.paragraph}>
+                  {verse.texto}
+                </Text>
+              ))}
+
+              <View style={styles.line} />
+            </TouchableOpacity>
+          );
+        }}
       />
 
       <Footer />

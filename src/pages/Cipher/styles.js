@@ -13,6 +13,7 @@ export default StyleSheet.create({
     flex: 1,
     // backgroundColor: 'red',
     marginTop: 30,
+    marginHorizontal: -15,
   },
 
   title: {
@@ -31,16 +32,25 @@ export default StyleSheet.create({
     marginBottom: 20,
   },
 
+  verse: {
+    // backgroundColor: 'green',
+    marginTop: 5,
+  },
+
   cipher: {
     // backgroundColor: 'green',
     fontWeight: 'bold',
     color: '#5a5a5a',
     width: '100%',
+    fontFamily: 'monospace',
+    fontSize: 12,
   },
 
   text: {
     // backgroundColor: 'red',
     color: '#5a5a5a',
     width: '100%',
+    fontSize: 12,
+    fontFamily: 'monospace',
   },
 });

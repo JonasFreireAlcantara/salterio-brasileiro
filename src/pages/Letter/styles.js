@@ -13,6 +13,7 @@ export default StyleSheet.create({
     flex: 1,
     // backgroundColor: 'red',
     marginTop: 30,
+    marginHorizontal: -15,
   },
 
   title: {
@@ -25,9 +26,12 @@ export default StyleSheet.create({
   },
 
   stanza: {
-    color: '#5a5a5a',
-    fontSize: 17,
     marginBottom: 20,
+  },
+
+  verse: {
+    fontSize: 16,
     textAlign: 'center',
+    color: '#5a5a5a',
   },
 });

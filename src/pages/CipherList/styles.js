@@ -36,9 +36,10 @@ export default StyleSheet.create({
   },
 
   main: {
-    flex: 1,
     // backgroundColor: 'red',
+    flex: 1,
     marginTop: 30,
+    marginHorizontal: -15,
   },
 
   psalm: {
@@ -53,17 +54,26 @@ export default StyleSheet.create({
     marginBottom: 10,
   },
 
-  cipher: {
-    fontWeight: 'bold',
-    color: '#5a5a5a',
-    // backgroundColor: 'green',
+  cipherTextContainer: {
+    // backgroundColor: 'yellow',
     width: '100%',
   },
 
-  text: {
+  cipher: {
+    // backgroundColor: 'green',
+    fontWeight: 'bold',
     color: '#5a5a5a',
-    // backgroundColor: 'red',
     width: '100%',
+    fontSize: 12,
+    fontFamily: 'monospace',
+  },
+
+  text: {
+    // backgroundColor: 'red',
+    color: '#5a5a5a',
+    width: '100%',
+    fontSize: 12,
+    fontFamily: 'monospace',
   },
 
   line: {
