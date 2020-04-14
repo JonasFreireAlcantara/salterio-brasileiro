@@ -111,6 +111,38 @@ const Psalms = [
       ],
     ],
   },
+
+  {
+    titulo: 'Salmo 3b', // Título do salmo
+
+    estrofes: [
+      [
+        // Primeira estrofe
+        {
+          // Primeiro verso
+          texto: 'Quão bem aventurado é o homem que não anda', // Texto do verso
+        },
+
+        {
+          // Segundo verso
+          texto: 'Conforme as ímpias sugestões de conselheiros maus.',
+        },
+      ],
+
+      [
+        // Segunda estrofe
+        {
+          // Primeiro verso
+          texto: 'Não se detém no caminhar de homens pecadores', // Texto do verso
+        },
+
+        {
+          // Segundo verso
+          texto: 'Nem se assenta em comunhão com o escarnecedor.',
+        },
+      ],
+    ],
+  },
 ];
 
 export default Psalms;

@@ -17,12 +17,15 @@ const CipherList = () => {
     navigation.navigate('Cipher', { psalm });
   }
 
+  const psalmsWithCipher = psalms.filter((psalm) => psalm.estrofes[0][0].cifra !== undefined);
+
   return (
     <View style={styles.container}>
       <Header />
 
       <View style={styles.search}>
         <TextInput style={styles.input} placeholder='Buscar Cifra' />
+
         <TouchableOpacity style={styles.button}>
           <MaterialIcons name='search' size={28} color='#fff' />
         </TouchableOpacity>
@@ -30,7 +33,7 @@ const CipherList = () => {
 
       <FlatList
         style={styles.main}
-        data={psalms}
+        data={psalmsWithCipher}
         showsVerticalScrollIndicator={false}
         keyExtractor={(psalm) => String(psalm.titulo)}
         renderItem={({ item: salmo }) => {
