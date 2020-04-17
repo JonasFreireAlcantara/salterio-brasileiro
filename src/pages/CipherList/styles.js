@@ -41,9 +41,7 @@ export default StyleSheet.create({
     marginTop: 30,
   },
 
-  psalm: {
-    alignItems: 'center',
-  },
+  psalm: {},
 
   title: {
     // backgroundColor: 'green',

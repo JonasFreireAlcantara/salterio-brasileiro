@@ -16,6 +16,11 @@ export default StyleSheet.create({
     marginHorizontal: -10,
   },
 
+  spinner: {
+    // backgroundColor: 'blue',
+    height: 150,
+  },
+
   title: {
     // backgroundColor: 'blue',
     color: '#5a5a5a',
