@@ -12,7 +12,7 @@ const Cipher = () => {
 
   const { psalm } = route.params;
 
-  const { titulo: title, estrofes: stanzas } = psalm;
+  const { title, stanzas } = psalm;
 
   return (
     <View style={styles.container}>
@@ -25,12 +25,33 @@ const Cipher = () => {
           <View key={index} style={styles.stanza}>
             {stanza.map((verse, index) => (
               <View key={index} style={styles.verse}>
-                <Text style={styles.cipher}>{verse.cifra}</Text>
-                <Text style={styles.text}>{verse.texto}</Text>
+                {verse.text.split('').map((character, index) => {
+                  const { cipher, text } = verse;
+                  const note = cipher[index];
+                  const letter = text[index];
+
+                  return (
+                    <View key={index} style={styles.element}>
+                      <Text style={styles.cipher}>{note}</Text>
+                      <Text style={styles.text}>{letter}</Text>
+                    </View>
+                  );
+                })}
               </View>
             ))}
           </View>
         ))}
+
+        {/* {stanzas.map((stanza, index) => (
+          <View key={index} style={styles.stanza}>
+            {stanza.map((verse, index) => (
+              <View key={index} style={styles.verse}>
+                <Text style={styles.cipher}>{verse.cipher}</Text>
+                <Text style={styles.text}>{verse.text}</Text>
+              </View>
+            ))}
+          </View>
+        ))} */}
       </ScrollView>
 
       <Footer />

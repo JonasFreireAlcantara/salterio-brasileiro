@@ -33,8 +33,8 @@ const Psalms = [
         // Primeira estrofe
         {
           // Primeiro verso
-          cifra: 'F            C7  Dm     C F   Edim    F  C', // Cifra do verso, se não existir cifra não por esta linha
-          texto: 'Quão bem aventurado é o homem que não anda', // Texto do verso
+          cifra: '|F| | | | | | | |     C7  Dm     C F   Edim    F  C', // Cifra do verso, se não existir cifra não por esta linha
+          texto: '|Q|u|ã|o| |b|e|m| aventurado é o homem que não anda', // Texto do verso
         },
 
         {

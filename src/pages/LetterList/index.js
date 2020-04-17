@@ -8,7 +8,7 @@ import Footer from '../../components/Footer';
 
 import styles from './styles';
 
-import psalms from '../../data/psalms';
+import psalms from '../../data/psalms.json';
 
 const LetterList = () => {
   const navigation = useNavigation();
@@ -32,17 +32,17 @@ const LetterList = () => {
         style={styles.main}
         data={psalms}
         showsVerticalScrollIndicator={false}
-        keyExtractor={(psalm) => String(psalm.titulo)}
-        renderItem={({ item: salmo }) => {
-          const [primeiraEstrofe] = salmo.estrofes;
+        keyExtractor={(psalm) => String(psalm.title)}
+        renderItem={({ item: psalm }) => {
+          const [firstStanza] = psalm.stanzas;
 
           return (
-            <TouchableOpacity onPress={() => navigateToLetter(salmo)} style={styles.psalm}>
-              <Text style={styles.title}>{salmo.titulo}</Text>
+            <TouchableOpacity onPress={() => navigateToLetter(psalm)} style={styles.psalm}>
+              <Text style={styles.title}>{psalm.title}</Text>
 
-              {primeiraEstrofe.map((verse, index) => (
+              {firstStanza.map((verse, index) => (
                 <Text key={index} style={styles.paragraph}>
-                  {verse.texto}
+                  {verse.text}
                 </Text>
               ))}
 

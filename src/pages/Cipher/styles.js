@@ -10,10 +10,10 @@ export default StyleSheet.create({
   },
 
   main: {
-    flex: 1,
     // backgroundColor: 'red',
+    flex: 1,
     marginTop: 30,
-    marginHorizontal: -15,
+    marginHorizontal: -10,
   },
 
   title: {
@@ -35,21 +35,29 @@ export default StyleSheet.create({
   verse: {
     // backgroundColor: 'green',
     marginTop: 5,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+
+  element: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    // backgroundColor: 'blue',
+    // marginLeft: 1,
   },
 
   cipher: {
     // backgroundColor: 'green',
     fontWeight: 'bold',
     color: '#5a5a5a',
-    width: '100%',
-    fontFamily: 'monospace',
     fontSize: 12,
+    fontFamily: 'monospace',
+    margin: 0,
   },
 
   text: {
     // backgroundColor: 'red',
     color: '#5a5a5a',
-    width: '100%',
     fontSize: 12,
     fontFamily: 'monospace',
   },

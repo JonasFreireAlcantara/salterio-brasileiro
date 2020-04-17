@@ -12,7 +12,7 @@ const Letter = () => {
 
   const { psalm } = route.params;
 
-  const { titulo: title, estrofes: stanzas } = psalm;
+  const { title, stanzas } = psalm;
 
   return (
     <View style={styles.container}>
@@ -25,7 +25,7 @@ const Letter = () => {
           <View key={index} style={styles.stanza}>
             {stanza.map((verse, index) => (
               <Text key={index} style={styles.verse}>
-                {verse.texto}
+                {verse.text}
               </Text>
             ))}
           </View>

@@ -68,17 +68,4 @@ export default StyleSheet.create({
     width: '70%',
     color: '#5a5a5a',
   },
-
-  footerShadow: {
-    elevation: 3,
-    marginHorizontal: -24,
-
-    shadowColor: '#000',
-    shadowRadius: 4,
-    shadowOffset: {
-      width: 0,
-      height: -3,
-    },
-    shadowOpacity: 0.25,
-  },
 });

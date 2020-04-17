@@ -39,7 +39,6 @@ export default StyleSheet.create({
     // backgroundColor: 'red',
     flex: 1,
     marginTop: 30,
-    marginHorizontal: -15,
   },
 
   psalm: {
@@ -54,24 +53,22 @@ export default StyleSheet.create({
     marginBottom: 10,
   },
 
-  cipherTextContainer: {
-    // backgroundColor: 'yellow',
-    width: '100%',
+  verse: {
+    flexDirection: 'column',
   },
 
   cipher: {
     // backgroundColor: 'green',
     fontWeight: 'bold',
     color: '#5a5a5a',
-    width: '100%',
     fontSize: 12,
     fontFamily: 'monospace',
+    margin: 0,
   },
 
   text: {
     // backgroundColor: 'red',
     color: '#5a5a5a',
-    width: '100%',
     fontSize: 12,
     fontFamily: 'monospace',
   },
@@ -82,18 +79,5 @@ export default StyleSheet.create({
     marginVertical: 30,
     width: '70%',
     color: '#5a5a5a',
-  },
-
-  footerShadow: {
-    elevation: 3,
-    marginHorizontal: -24,
-
-    shadowColor: '#000',
-    shadowRadius: 4,
-    shadowOffset: {
-      width: 0,
-      height: -3,
-    },
-    shadowOpacity: 0.25,
   },
 });
