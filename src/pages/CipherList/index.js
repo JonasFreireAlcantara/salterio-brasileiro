@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 import Header from '../../components/Header';
@@ -8,32 +7,45 @@ import Footer from '../../components/Footer';
 
 import styles from './styles';
 
-import psalms from '../../data/psalms.json';
+import dataset from '../../data/psalms.json';
+
+const psalmsWithCipher = dataset.filter((psalm) => psalm.stanzas[0][0].cipher !== undefined);
 
 const CipherList = () => {
+  const [search, setSearch] = useState('');
+  const [psalms, setPsalms] = useState(psalmsWithCipher);
+
   const navigation = useNavigation();
 
   function navigateToCipher(psalm) {
     navigation.navigate('Cipher', { psalm });
   }
 
-  const psalmsWithCipher = psalms.filter((psalm) => psalm.stanzas[0][0].cipher !== undefined);
+  function handleChangeSearch(text) {
+    const result = psalmsWithCipher.filter((psalm) =>
+      psalm.title.toLowerCase().includes(text.toLowerCase())
+    );
+
+    setSearch(text);
+    setPsalms(result);
+  }
 
   return (
     <View style={styles.container}>
       <Header />
 
       <View style={styles.search}>
-        <TextInput style={styles.input} placeholder='Buscar Cifra' />
-
-        <TouchableOpacity style={styles.button}>
-          <MaterialIcons name='search' size={28} color='#fff' />
-        </TouchableOpacity>
+        <TextInput
+          style={styles.input}
+          placeholder='Buscar Cifra'
+          value={search}
+          onChangeText={(text) => handleChangeSearch(text)}
+        />
       </View>
 
       <FlatList
         style={styles.main}
-        data={psalmsWithCipher}
+        data={psalms}
         showsVerticalScrollIndicator={false}
         keyExtractor={(psalm) => String(psalm.title)}
         renderItem={({ item: psalm }) => {

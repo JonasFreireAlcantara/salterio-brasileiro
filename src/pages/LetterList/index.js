@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 import Header from '../../components/Header';
@@ -8,13 +7,25 @@ import Footer from '../../components/Footer';
 
 import styles from './styles';
 
-import psalms from '../../data/psalms.json';
+import dataset from '../../data/psalms.json';
 
 const LetterList = () => {
+  const [search, setSearch] = useState('');
+  const [psalms, setPsalms] = useState(dataset);
+
   const navigation = useNavigation();
 
   function navigateToLetter(psalm) {
     navigation.navigate('Letter', { psalm });
+  }
+
+  function handleChangeSearch(text) {
+    const result = dataset.filter((psalm) =>
+      psalm.title.toLowerCase().includes(text.toLowerCase())
+    );
+
+    setSearch(text);
+    setPsalms(result);
   }
 
   return (
@@ -22,10 +33,12 @@ const LetterList = () => {
       <Header />
 
       <View style={styles.search}>
-        <TextInput style={styles.input} placeholder='Buscar Letra' />
-        <TouchableOpacity style={styles.button}>
-          <MaterialIcons name='search' size={28} color='#fff' />
-        </TouchableOpacity>
+        <TextInput
+          style={styles.input}
+          placeholder='Buscar Letra'
+          value={search}
+          onChangeText={(text) => handleChangeSearch(text)}
+        />
       </View>
 
       <FlatList
