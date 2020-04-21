@@ -53,7 +53,7 @@ const LetterList = () => {
             <TouchableOpacity onPress={() => navigateToLetter(psalm)} style={styles.psalm}>
               <Text style={styles.title}>{psalm.title}</Text>
 
-              {firstStanza.map((verse, index) => (
+              {firstStanza.slice(0, 2).map((verse, index) => (
                 <Text key={index} style={styles.paragraph}>
                   {verse.text}
                 </Text>

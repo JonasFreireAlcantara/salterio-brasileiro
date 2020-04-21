@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -11,7 +11,7 @@ const About = () => {
     <View style={styles.container}>
       <Header />
 
-      <View style={styles.main}>
+      <ScrollView style={styles.main}>
         <Text style={styles.title}>O que é o Saltério ?</Text>
 
         <Text style={styles.about}>
@@ -31,7 +31,7 @@ const About = () => {
           Cremos que os salmos devem ser entoados pelo povo de Deus espalhado sobre a face da terra
           e pretendemos contribuir com o seu uso por cristãos de fala portuguesa.
         </Text>
-      </View>
+      </ScrollView>
 
       <Footer />
     </View>

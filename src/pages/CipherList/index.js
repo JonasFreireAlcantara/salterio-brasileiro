@@ -55,7 +55,7 @@ const CipherList = () => {
             <TouchableOpacity onPress={() => navigateToCipher(psalm)} style={styles.psalm}>
               <Text style={styles.title}>{psalm.title}</Text>
 
-              {firstStanza.map((verse, index) => (
+              {firstStanza.slice(0, 2).map((verse, index) => (
                 <View key={index} style={styles.verse}>
                   <Text style={styles.cipher}>{verse.cipher}</Text>
                   <Text style={styles.text}>{verse.text}</Text>
