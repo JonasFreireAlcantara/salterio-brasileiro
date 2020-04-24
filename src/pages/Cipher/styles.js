@@ -25,9 +25,9 @@ export default StyleSheet.create({
     // backgroundColor: 'blue',
     color: '#5a5a5a',
     fontWeight: 'bold',
-    fontSize: 20,
-    marginVertical: 30,
-    textAlign: 'center',
+    fontSize: 22,
+    marginTop: 30,
+    // textAlign: 'center',
   },
 
   stanza: {
@@ -35,6 +35,18 @@ export default StyleSheet.create({
     color: '#5a5a5a',
     fontSize: 11,
     marginBottom: 20,
+  },
+
+  meta: {
+    marginTop: 20,
+    marginBottom: 30,
+  },
+
+  info: {
+    // backgroundColor: 'blue',
+    color: '#5a5a5a',
+    fontWeight: 'bold',
+    fontSize: 13,
   },
 
   verse: {

@@ -14,7 +14,7 @@ const Cipher = () => {
   const route = useRoute();
 
   const { psalm } = route.params;
-  const { title } = psalm;
+  const { title, melody, metric, composer, harmonization, letter } = psalm;
 
   function renderComponent(psalm) {
     return new Promise((resolve, reject) => {
@@ -56,6 +56,14 @@ const Cipher = () => {
 
       <ScrollView showsVerticalScrollIndicator={false} style={styles.main}>
         <Text style={styles.title}>{title}</Text>
+
+        <View style={styles.meta}>
+          {melody && <Text style={styles.info}>{`Melodia: ${melody}`}</Text>}
+          {metric && <Text style={styles.info}>{`Métrica: ${metric}`}</Text>}
+          {composer && <Text style={styles.info}>{`Composição: ${composer}`}</Text>}
+          {harmonization && <Text style={styles.info}>{`Harmonização: ${harmonization}`}</Text>}
+          {letter && <Text style={styles.info}>{`Letra: ${letter}`}</Text>}
+        </View>
 
         {loading ? (
           <ActivityIndicator style={styles.spinner} size='large' color='5a5a5a' />
