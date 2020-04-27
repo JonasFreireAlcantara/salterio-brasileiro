@@ -44,4 +44,28 @@ export default StyleSheet.create({
     color: '#5a5a5a',
     fontSize: 16,
   },
+
+  space: {
+    height: 80,
+  },
+
+  play: {
+    position: 'absolute',
+    bottom: 90,
+    left: 20,
+    backgroundColor: '#5a5a5a',
+    width: 60,
+    height: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 30,
+    shadowColor: '#000',
+    shadowRadius: 4,
+    shadowOffset: {
+      width: 0,
+      height: -3,
+    },
+    shadowOpacity: 0.25,
+    elevation: 2,
+  },
 });
