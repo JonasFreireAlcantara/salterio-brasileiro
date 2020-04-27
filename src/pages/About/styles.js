@@ -28,4 +28,17 @@ export default StyleSheet.create({
     marginBottom: 20,
     textAlign: 'justify',
   },
+
+  contributions: {
+    marginTop: 10,
+    fontWeight: 'bold',
+    color: '#5a5a5a',
+    fontSize: 12,
+  },
+
+  email: {
+    marginLeft: 10,
+    color: '#5a5a5a',
+    fontSize: 12,
+  },
 });

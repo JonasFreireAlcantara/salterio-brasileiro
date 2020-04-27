@@ -20,17 +20,14 @@ const About = () => {
           e pretendemos contribuir com o seu uso por cristãos de fala portuguesa.
         </Text>
 
-        <Text style={styles.about}>
-          A CBS é uma comissão formada por membros reformados e confessionais da Igreja de Cristo.
-          Cremos que os salmos devem ser entoados pelo povo de Deus espalhado sobre a face da terra
-          e pretendemos contribuir com o seu uso por cristãos de fala portuguesa.
-        </Text>
+        <Text style={[styles.contributions, { marginTop: 30 }]}>Desenvolvedor: Jonas Freire</Text>
+        <Text style={styles.email}>jonasfreireperson@gmail.com</Text>
 
-        <Text style={styles.about}>
-          A CBS é uma comissão formada por membros reformados e confessionais da Igreja de Cristo.
-          Cremos que os salmos devem ser entoados pelo povo de Deus espalhado sobre a face da terra
-          e pretendemos contribuir com o seu uso por cristãos de fala portuguesa.
-        </Text>
+        <Text style={styles.contributions}>Contribuidor: Paulo Moraes</Text>
+        <Text style={styles.email}>paulomoraes@gmail.com</Text>
+
+        <Text style={styles.contributions}>Contribuidor: Pedro Araújo</Text>
+        <Text style={styles.email}>pedroaraujo@gmail.com</Text>
       </ScrollView>
 
       <Footer />
