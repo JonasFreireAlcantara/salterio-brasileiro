@@ -37,7 +37,8 @@ const Letter = () => {
   useEffect(() => {
     navigation.addListener('blur', () => {
       if (sound !== undefined) {
-        sound.stopAsync();
+        sound.pauseAsync();
+        setPlaying(false);
       }
     });
   }, [sound]);
