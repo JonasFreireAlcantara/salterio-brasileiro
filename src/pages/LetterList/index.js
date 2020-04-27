@@ -1,19 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 import styles from './styles';
 
-import dataset from '../../data/psalms.json';
+// import dataset from '../../data/psalms.json';
 
 const LetterList = () => {
   const [search, setSearch] = useState('');
   const [psalms, setPsalms] = useState(dataset);
+  const [dataset, setDataset] = useState([]);
 
   const navigation = useNavigation();
+
+  useEffect(() => {
+    fetchPsalms();
+  }, []);
+
+  useEffect(() => {
+    setPsalms(dataset);
+  }, [dataset]);
+
+  async function fetchPsalms() {
+    const result = await axios.get('https://jonas-backend.herokuapp.com/api/psalms');
+    setDataset(result.data);
+  }
 
   function navigateToLetter(psalm) {
     navigation.navigate('Letter', { psalm });

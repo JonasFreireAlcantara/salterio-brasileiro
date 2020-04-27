@@ -1,21 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 import styles from './styles';
 
-import dataset from '../../data/psalms.json';
+// import dataset from '../../data/psalms.json';
 
-const psalmsWithCipher = dataset.filter((psalm) => psalm.stanzas[0][0].cipher !== undefined);
+// const psalmsWithCipher = dataset.filter((psalm) => psalm.stanzas[0][0].cipher !== undefined);
 
 const CipherList = () => {
   const [search, setSearch] = useState('');
-  const [psalms, setPsalms] = useState(psalmsWithCipher);
+  const [psalms, setPsalms] = useState([]);
+  const [psalmsWithCipher, setPsalmsWithCipher] = useState([]);
+  const [dataset, setDataset] = useState([]);
 
   const navigation = useNavigation();
+
+  useEffect(() => {
+    fetchPsalms();
+  }, []);
+
+  useEffect(() => {
+    const encryptedPsalms = dataset.filter((psalm) => psalm.stanzas[0][0].cipher !== undefined);
+    setPsalmsWithCipher(encryptedPsalms);
+    setPsalms(encryptedPsalms);
+  }, [dataset]);
+
+  async function fetchPsalms() {
+    const result = await axios.get('https://jonas-backend.herokuapp.com/api/psalms');
+    setDataset(result.data);
+  }
 
   function navigateToCipher(psalm) {
     navigation.navigate('Cipher', { psalm });
