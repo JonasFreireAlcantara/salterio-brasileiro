@@ -80,18 +80,19 @@ const CipherList = () => {
             const [firstStanza] = psalm.stanzas;
 
             return (
-              <TouchableOpacity onPress={() => navigateToCipher(psalm)} style={styles.psalm}>
-                <Text style={styles.title}>{psalm.title}</Text>
+              <View style={styles.psalm}>
+                <TouchableOpacity onPress={() => navigateToCipher(psalm)}>
+                  <Text style={styles.title}>{psalm.title}</Text>
 
-                {firstStanza.slice(0, 2).map((verse, index) => (
-                  <View key={index} style={styles.verse}>
-                    <Text style={styles.cipher}>{verse.cipher}</Text>
-                    <Text style={styles.text}>{verse.text}</Text>
-                  </View>
-                ))}
-
+                  {firstStanza.slice(0, 2).map((verse, index) => (
+                    <View key={index} style={styles.verse}>
+                      <Text style={styles.cipher}>{verse.cipher}</Text>
+                      <Text style={styles.text}>{verse.text}</Text>
+                    </View>
+                  ))}
+                </TouchableOpacity>
                 <View style={styles.line} />
-              </TouchableOpacity>
+              </View>
             );
           }}
         />
