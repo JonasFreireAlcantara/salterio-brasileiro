@@ -3,6 +3,8 @@ import { View, Text, TextInput, TouchableOpacity, FlatList, ActivityIndicator } 
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 
+import psalmComparation from '../../utils/comparation';
+
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -33,7 +35,10 @@ const CipherList = () => {
 
   async function fetchPsalms() {
     const result = await axios.get('https://jonas-backend.herokuapp.com/api/psalms');
-    setDataset(result.data);
+
+    const data = result.data.sort(psalmComparation);
+
+    setDataset(data);
     setLoading(false);
   }
 
