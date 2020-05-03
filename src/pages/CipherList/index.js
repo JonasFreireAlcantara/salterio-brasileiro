@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 
@@ -17,6 +17,7 @@ const CipherList = () => {
   const [psalms, setPsalms] = useState([]);
   const [psalmsWithCipher, setPsalmsWithCipher] = useState([]);
   const [dataset, setDataset] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const navigation = useNavigation();
 
@@ -33,6 +34,7 @@ const CipherList = () => {
   async function fetchPsalms() {
     const result = await axios.get('https://jonas-backend.herokuapp.com/api/psalms');
     setDataset(result.data);
+    setLoading(false);
   }
 
   function navigateToCipher(psalm) {
@@ -61,30 +63,34 @@ const CipherList = () => {
         />
       </View>
 
-      <FlatList
-        style={styles.main}
-        data={psalms}
-        showsVerticalScrollIndicator={false}
-        keyExtractor={(psalm) => String(psalm.title)}
-        renderItem={({ item: psalm }) => {
-          const [firstStanza] = psalm.stanzas;
+      {loading ? (
+        <ActivityIndicator style={styles.main} size='large' color='#5a5a5a' />
+      ) : (
+        <FlatList
+          style={styles.main}
+          data={psalms}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={(psalm) => String(psalm.title)}
+          renderItem={({ item: psalm }) => {
+            const [firstStanza] = psalm.stanzas;
 
-          return (
-            <TouchableOpacity onPress={() => navigateToCipher(psalm)} style={styles.psalm}>
-              <Text style={styles.title}>{psalm.title}</Text>
+            return (
+              <TouchableOpacity onPress={() => navigateToCipher(psalm)} style={styles.psalm}>
+                <Text style={styles.title}>{psalm.title}</Text>
 
-              {firstStanza.slice(0, 2).map((verse, index) => (
-                <View key={index} style={styles.verse}>
-                  <Text style={styles.cipher}>{verse.cipher}</Text>
-                  <Text style={styles.text}>{verse.text}</Text>
-                </View>
-              ))}
+                {firstStanza.slice(0, 2).map((verse, index) => (
+                  <View key={index} style={styles.verse}>
+                    <Text style={styles.cipher}>{verse.cipher}</Text>
+                    <Text style={styles.text}>{verse.text}</Text>
+                  </View>
+                ))}
 
-              <View style={styles.line} />
-            </TouchableOpacity>
-          );
-        }}
-      />
+                <View style={styles.line} />
+              </TouchableOpacity>
+            );
+          }}
+        />
+      )}
 
       <Footer />
     </View>
