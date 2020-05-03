@@ -62,10 +62,9 @@ export default StyleSheet.create({
   },
 
   line: {
-    borderBottomColor: '#000',
+    borderBottomColor: '#bfbfbf',
     borderBottomWidth: 1,
     marginVertical: 30,
     width: '70%',
-    color: '#5a5a5a',
   },
 });

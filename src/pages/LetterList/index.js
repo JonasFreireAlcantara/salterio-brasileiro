@@ -70,17 +70,18 @@ const LetterList = () => {
             const [firstStanza] = psalm.stanzas;
 
             return (
-              <TouchableOpacity onPress={() => navigateToLetter(psalm)} style={styles.psalm}>
-                <Text style={styles.title}>{psalm.title}</Text>
+              <View style={styles.psalm}>
+                <TouchableOpacity onPress={() => navigateToLetter(psalm)}>
+                  <Text style={styles.title}>{psalm.title}</Text>
 
-                {firstStanza.slice(0, 2).map((verse, index) => (
-                  <Text key={index} style={styles.paragraph}>
-                    {verse.text}
-                  </Text>
-                ))}
-
+                  {firstStanza.slice(0, 2).map((verse, index) => (
+                    <Text key={index} style={styles.paragraph}>
+                      {verse.text}
+                    </Text>
+                  ))}
+                </TouchableOpacity>
                 <View style={styles.line} />
-              </TouchableOpacity>
+              </View>
             );
           }}
         />
