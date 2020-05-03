@@ -34,7 +34,7 @@ export default StyleSheet.create({
     // backgroundColor: 'red',
     color: '#5a5a5a',
     fontSize: 11,
-    marginBottom: 20,
+    marginBottom: 50,
   },
 
   meta: {
