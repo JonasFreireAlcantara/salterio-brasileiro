@@ -23,11 +23,8 @@ const About = () => {
         <Text style={[styles.contributions, { marginTop: 30 }]}>Desenvolvedor: Jonas Freire</Text>
         <Text style={styles.email}>jonasfreireperson@gmail.com</Text>
 
-        <Text style={styles.contributions}>Contribuidor: Paulo Moraes</Text>
-        <Text style={styles.email}>paulomoraes@gmail.com</Text>
-
         <Text style={styles.contributions}>Contribuidor: Pedro Araújo</Text>
-        <Text style={styles.email}>pedroaraujo@gmail.com</Text>
+        <Text style={styles.email}>nascimentoaraujomat@gmail.com</Text>
       </ScrollView>
 
       <Footer />
