@@ -35,6 +35,19 @@ const Letter = () => {
   }, []);
 
   useEffect(() => {
+    if (!sound) {
+      return;
+    }
+
+    sound.setOnPlaybackStatusUpdate((playbackStatus) => {
+      if (playbackStatus.didJustFinish && !playbackStatus.isLooping) {
+        sound.stopAsync();
+        setPlaying(false);
+      }
+    });
+  }, [sound]);
+
+  useEffect(() => {
     navigation.addListener('blur', () => {
       if (sound !== undefined) {
         sound.pauseAsync();
