@@ -71,6 +71,7 @@ const LetterList = () => {
           data={psalms}
           showsVerticalScrollIndicator={false}
           keyExtractor={(psalm) => String(psalm.title)}
+          ItemSeparatorComponent={() => <View style={styles.line} />}
           renderItem={({ item: psalm }) => {
             const [firstStanza] = psalm.stanzas;
 
@@ -85,7 +86,6 @@ const LetterList = () => {
                     </Text>
                   ))}
                 </TouchableOpacity>
-                <View style={styles.line} />
               </View>
             );
           }}

@@ -43,28 +43,27 @@ export default StyleSheet.create({
 
   psalm: {
     // backgroundColor: 'blue',
-    alignItems: 'center',
+    marginVertical: 10,
   },
 
   title: {
     // backgroundColor: 'green',
     fontWeight: 'bold',
-    textAlign: 'center',
     color: '#5a5a5a',
     marginBottom: 5,
+    fontSize: 14,
   },
 
   paragraph: {
     // backgroundColor: 'red',
-    textAlign: 'center',
     color: '#5a5a5a',
     fontWeight: '100',
+    fontSize: 13,
   },
 
   line: {
-    borderBottomColor: '#bfbfbf',
-    borderBottomWidth: 1,
-    marginVertical: 30,
-    width: '70%',
+    borderBottomColor: '#cfcfcf',
+    borderBottomWidth: 0.7,
+    width: '100%',
   },
 });
