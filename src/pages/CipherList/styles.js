@@ -42,13 +42,13 @@ export default StyleSheet.create({
   },
 
   psalm: {
-    alignItems: 'center',
+    marginVertical: 10,
   },
 
   title: {
     // backgroundColor: 'green',
     fontWeight: 'bold',
-    textAlign: 'center',
+    fontSize: 14,
     color: '#5a5a5a',
     marginBottom: 10,
   },
@@ -61,7 +61,7 @@ export default StyleSheet.create({
     // backgroundColor: 'green',
     fontWeight: 'bold',
     color: '#5a5a5a',
-    fontSize: 12,
+    fontSize: 11,
     fontFamily: 'monospace',
     margin: 0,
   },
@@ -69,14 +69,13 @@ export default StyleSheet.create({
   text: {
     // backgroundColor: 'red',
     color: '#5a5a5a',
-    fontSize: 12,
+    fontSize: 11,
     fontFamily: 'monospace',
   },
 
   line: {
     borderBottomColor: '#bfbfbf',
-    borderBottomWidth: 1,
-    marginVertical: 30,
-    width: '70%',
+    borderBottomWidth: 0.7,
+    width: '100%',
   },
 });

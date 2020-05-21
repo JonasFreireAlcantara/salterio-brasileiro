@@ -76,6 +76,7 @@ const CipherList = () => {
           data={psalms}
           showsVerticalScrollIndicator={false}
           keyExtractor={(psalm) => String(psalm.title)}
+          ItemSeparatorComponent={() => <View style={styles.line} />}
           renderItem={({ item: psalm }) => {
             const [firstStanza] = psalm.stanzas;
 
@@ -86,12 +87,15 @@ const CipherList = () => {
 
                   {firstStanza.slice(0, 2).map((verse, index) => (
                     <View key={index} style={styles.verse}>
-                      <Text style={styles.cipher}>{verse.cipher}</Text>
-                      <Text style={styles.text}>{verse.text}</Text>
+                      <Text numberOfLines={1} style={styles.cipher}>
+                        {verse.cipher}
+                      </Text>
+                      <Text numberOfLines={1} style={styles.text}>
+                        {verse.text}
+                      </Text>
                     </View>
                   ))}
                 </TouchableOpacity>
-                <View style={styles.line} />
               </View>
             );
           }}
